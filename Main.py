@@ -7,7 +7,12 @@ FastaFile= "exampledata/seqmultiline.fasta"
 
 
 mySeqs=Sequence(FastaFile)
-print(mySeqs)
+mySeqs.get_seqs()
+print(mySeqs.Seqs)
+print(mySeqs.get_seqs_length)
+# print(mySeqs)
+# print(type(mySeqs))
+
 
 # mySeqs= Read_Fasta(FastaFile)
 # seqLenght=get_sequence_lenght(mySeqs)
