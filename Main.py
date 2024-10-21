@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 FastaFile= "exampledata/seqmultiline.fasta"
-from SeqMod.seqIO import Read_Fasta
+
+
+
+from SeqMod.seqIO import Read_Fasta, get_sequence_lenght
 mySeqs= Read_Fasta(FastaFile)
-print(mySeqs)
+seqLenght=get_sequence_lenght(mySeqs)
+print(seqLenght)
+#print(mySeqs)

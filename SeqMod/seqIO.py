@@ -26,3 +26,10 @@ def Read_Fasta(fastaFile):
             else:
                 Seqs[header] +=line
     return Seqs
+
+def get_sequence_lenght(Seqs):
+    Seq_len={}
+    for header, seq in Seqs.items():
+        Seq_len[header]=len(seq)
+    return Seq_len
+    
