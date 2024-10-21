@@ -35,4 +35,8 @@ def get_sequence_lenght(Seqs):
     return Seq_len
 
 
-    
+def get_GC_content(Seqs):
+    gc_content={}
+    for header, seq in Seqs.items():
+        gc_content[header]= (seq.count("G"))+(seq.count("C"))/len(seq)
+    return gc_content
