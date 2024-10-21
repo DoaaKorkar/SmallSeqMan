@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from SeqMod.seqIO import Read_Fasta, get_sequence_lenght
-from SeqClass import
+from SeqClass.Classes import Sequence
 
 FastaFile= "exampledata/seqmultiline.fasta"
 
