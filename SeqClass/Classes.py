@@ -10,4 +10,4 @@ class Sequence():
         if self.Seqs is None:
             self.get_seqs()
         self.Seq_len= get_sequence_lenght(self.Seqs)
-        return self.get_seqs_length
+        return self.Seq_len

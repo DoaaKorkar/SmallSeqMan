@@ -22,14 +22,17 @@ def Read_Fasta(fastaFile):
                 # remove ">" and extract only the first value
                 header=header[1:].split()[0]
                 Seqs[header]=""
-            #Check for Sequence
+            #append Sequence(value) to header(key)
             else:
                 Seqs[header] +=line
     return Seqs
 
+# calculate sequence length
 def get_sequence_lenght(Seqs):
     Seq_len={}
     for header, seq in Seqs.items():
         Seq_len[header]=len(seq)
     return Seq_len
+
+
     
