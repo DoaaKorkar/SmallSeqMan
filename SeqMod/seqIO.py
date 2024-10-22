@@ -24,7 +24,7 @@ def Read_Fasta(fastaFile):
                 Seqs[header]=""
             #append Sequence(value) to header(key)
             else:
-                Seqs[header] +=line
+                Seqs[header] +=line.upper()
     return Seqs
 
 # calculate sequence length
@@ -40,3 +40,13 @@ def get_GC_content(Seqs):
     for header, seq in Seqs.items():
         gc_content[header]= (seq.count("G"))+(seq.count("C"))/len(seq)
     return gc_content
+
+
+def get_at_content(Seqs):
+    at_content={}
+    for header, seq in Seqs.items():
+        at_content[header]=(seq.count("A"))+(seq.count("T"))/len(seq)
+    return at_content
+
+
+
