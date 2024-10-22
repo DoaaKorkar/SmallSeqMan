@@ -9,9 +9,10 @@ FastaFile= "exampledata/seqmultiline.fasta"
 mySeqs=Sequence(FastaFile)
 
 print(mySeqs.get_seqs())
-print(mySeqs.get_seqs_length())
-print(mySeqs.get_GC_content())
-print(mySeqs.get_at_content())
+# print(mySeqs.get_seqs_length())
+# print(mySeqs.get_GC_content())
+# print(mySeqs.get_at_content())
+# print(mySeqs.get_seq_info())
 # print(mySeqs)
 # print(type(mySeqs))
 

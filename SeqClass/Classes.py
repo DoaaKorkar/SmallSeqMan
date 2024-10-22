@@ -8,6 +8,15 @@ class Sequence():
         self.Seqs= Read_Fasta(self.fileName)
         return self.Seqs
     
+    # def get_seq_info(self):
+    #     if self.Seqs is None:
+    #         self.get_seqs()
+    #     info={}
+    #     info["length"]=get_sequence_lenght(self.Seqs)
+    #     info["GC_content"]= get_GC_content(self.Seqs)
+    #     info["AT_content"]=get_at_content(self.Seqs)
+    #     return info
+    
     def get_seqs_length(self):
         if self.Seqs is None:
             self.get_seqs()
