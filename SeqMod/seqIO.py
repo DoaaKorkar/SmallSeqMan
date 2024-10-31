@@ -63,3 +63,14 @@ def Reverse(Seqs):
         SeqDict[header]=seq[::-1]
     return SeqDict
 
+def complement(Seqs):
+    SeqDict={}
+    for head,seq in Seqs.items():
+        SeqTab=str.maketrans("ATGC","TACG")
+        seq=seq.translate(SeqTab)
+        SeqDict[head]=seq
+    return SeqDict
+
+def Reverse_Complement(Seqs):
+    #encapsulation
+    return complement(Reverse(Seqs))
