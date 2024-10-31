@@ -29,8 +29,20 @@ class Sequence():
         self.gc_content= get_GC_content(self.Seqs)
         return self.gc_content
     
-    def get_at_content(self):
+    def get_AT_content(self):
         if self.Seqs is None:
             self.get_seqs
         self.at_content= get_at_content(self.Seqs)
         return self.at_content
+    
+    def get_Reverse(self):
+        if self.Seqs is None:
+            self.get_seqs
+        self.Revesre= Reverse(self.Seqs)
+        return self.Revesre
+    
+    def get_Complement(self):
+        if self.Seqs is None:
+            self.get_seqs
+        self.Complement= complement(self.Seqs)
+        return self.Complement
