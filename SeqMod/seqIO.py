@@ -49,4 +49,17 @@ def get_at_content(Seqs):
     return at_content
 
 
+def Check_nonDNA(Seqs):
+    for head, seq in Seqs.items():
+        for nuc in seq:
+            if nuc not in "ATGC":
+                print(f"Error {head} has non DNA base {nuc}")
+                return True
+    return False
+
+def Reverse(Seqs):
+    SeqDict={}
+    for header, seq in Seqs.items():
+        SeqDict[header]=seq[::-1]
+    return SeqDict
 
