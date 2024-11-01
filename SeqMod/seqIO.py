@@ -27,6 +27,8 @@ def Read_Fasta(fastaFile):
             if line.startswith(">"):
                 header=line[1:]
                 #Check the header
+                #sys.exit(0) typically signals a successful termination.
+                 #sys.exit(1) or any non-zero number indicates an error or abnormal termination.
                 if len(header)< 1:
                     print("Error empty Header")
                     sys.exit(1)
