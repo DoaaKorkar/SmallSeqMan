@@ -15,7 +15,7 @@ def Read_Fasta(fastaFile):
         print(f"Error: {fastaFile} does not exist")
         return 
     Seqs = {}  #Key: Header, Value: Sequence
-    with open(fastaFile) as f:   #removed "r" --> the function defult to read
+    with open(fastaFile) as f:   #removed "r" mode --> the function defult mode to read
         header=None
         for line in f:
             #removing whitespaces
