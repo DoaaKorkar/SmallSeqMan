@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+import os
+import sys
+
+
 # SeqFileObject= open(FastaFile, "r")
 # print("first print")
 # print(SeqFileObject.read())
@@ -7,8 +11,11 @@
 # SeqFileObject.close()
 
 def Read_Fasta(fastaFile):
+    if not os.path.exists(fastaFile):
+        print(f"Error: {fastaFile} does not exist")
+        return 
     Seqs = {}  #Key: Header, Value: Sequence
-    with open(fastaFile,"r") as f:
+    with open(fastaFile) as f:   #removed "r" --> the function defult to read
         header=None
         for line in f:
             #removing whitespaces
@@ -18,9 +25,13 @@ def Read_Fasta(fastaFile):
                 continue
             #Check for Heaer
             if line.startswith(">"):
-                header=line
+                header=line[1:]
+                #Check the header
+                if len(header)< 1:
+                    print("Error empty Header")
+                    sys.exit(1)
                 # remove ">" and extract only the first value
-                header=header[1:].split()[0]
+                header=header.split()[0]
                 Seqs[header]=""
             #append Sequence(value) to header(key)
             else:
