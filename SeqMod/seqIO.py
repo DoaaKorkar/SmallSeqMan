@@ -44,6 +44,7 @@ def Read_Fasta(fastaFile):
 def get_sequence_lenght(Seqs):
     Seq_len={}
     for header, seq in Seqs.items():
+        #items() --> outputs a list of tuples
         Seq_len[header]=len(seq)
     return Seq_len
 
@@ -51,14 +52,14 @@ def get_sequence_lenght(Seqs):
 def get_GC_content(Seqs):
     gc_content={}
     for header, seq in Seqs.items():
-        gc_content[header]= (seq.count("G"))+(seq.count("C"))/len(seq)
+        gc_content[header]= round((seq.count("G"))+(seq.count("C"))/len(seq),2)
     return gc_content
 
 
 def get_at_content(Seqs):
     at_content={}
     for header, seq in Seqs.items():
-        at_content[header]=(seq.count("A"))+(seq.count("T"))/len(seq)
+        at_content[header]=round((seq.count("A"))+(seq.count("T"))/len(seq),2)
     return at_content
 
 
