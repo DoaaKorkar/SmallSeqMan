@@ -11,5 +11,3 @@ class DNA(Sequence):
         # self.reve_comp= complement(self.reve)
         # return self.reve_comp
         return Reverse_Complement(self.get_seqs)
-
-    
