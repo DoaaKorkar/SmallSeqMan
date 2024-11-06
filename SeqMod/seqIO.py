@@ -33,7 +33,7 @@ def Read_Fasta(fastaFile):
                  #sys.exit(1) or any non-zero number indicates an error or abnormal termination.
                 if len(header)< 1:
                     print("Error empty Header")
-                    sys.exit(1)
+                    sys.exit(1)   #exit the program due to an error.
                 # remove ">" and extract only the first value
                 header=header.split()[0]
                 Seqs[header]=""
