@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from SeqClass.sequences import Sequence
 from SeqMod.seqIO import *
+from SeqClass.GenomicConst import *
+
 class DNA(Sequence):
     def get_reverse_complement(self):
         if "seqs" not in dir(self):
