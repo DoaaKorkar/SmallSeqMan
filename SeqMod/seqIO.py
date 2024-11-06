@@ -78,12 +78,12 @@ def Check_nonDNA(Seqs):
                 return True
     return False
 
-def Reverse(seqs):
+def Reverse(Seqs):
     """
     this function takes Dictionary.
     """
     SeqDict={}
-    for header, seq in seqs.items():
+    for header, seq in Seqs.items():
         SeqDict[header]=seq[::-1]
         
     return SeqDict
