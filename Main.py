@@ -2,6 +2,9 @@
 from SeqMod.seqIO import *
 from SeqClass.sequences import Sequence
 from SeqClass.DNA import DNA
+
+
+
 FastaFile= "exampledata/seqmultiline.fasta"
 
 # mine=Read_Fasta(FastaFile)
