@@ -6,17 +6,18 @@ FastaFile= "exampledata/seqmultiline.fasta"
 
 
 
-# mySeqs=Sequence(FastaFile)
+mySeqs=Sequence(FastaFile)
 
-# print(mySeqs.get_seqs())
+print(mySeqs.get_seqs())
 # print(mySeqs.get_seqs_length())
 # print(mySeqs.get_GC_content())
 # print(mySeqs.get_AT_content())
 # print(mySeqs.get_Reverse())
 # print(mySeqs.get_Complement())
 
-mine=Read_Fasta(FastaFile)
-print(Reverse_Complement(mine))
+# mine=Read_Fasta(FastaFile)
+print(mySeqs.get_RNA())
+# print(Reverse_Complement(mine))
 
 ###print(mySeqs.get_seq_info())
 # print(mySeqs)

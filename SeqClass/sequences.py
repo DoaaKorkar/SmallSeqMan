@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import re
 from SeqMod.seqIO import *
 class Sequence():
     def __init__(self, fileName):
@@ -18,31 +19,37 @@ class Sequence():
     #     return info
     
     def get_seqs_length(self):
-        if self.Seqs is None:
+        if "Seqs" not in dir(self):
             self.get_seqs()
-        self.Seq_len= get_sequence_lenght(self.Seqs)
+        self.Seq_len= sequence_lenght(self.Seqs)
         return self.Seq_len
     
     def get_GC_content(self):
-        if self.Seqs is None:
+        if "Seqs" not in dir(self):
             self.get_seqs()
-        self.gc_content= get_GC_content(self.Seqs)
+        self.gc_content= GC_content(self.Seqs)
         return self.gc_content
     
     def get_AT_content(self):
-        if self.Seqs is None:
+        if "Seqs" not in dir(self):
             self.get_seqs
-        self.at_content= get_at_content(self.Seqs)
+        self.at_content= AT_content(self.Seqs)
         return self.at_content
     
     def get_Reverse(self):
-        if self.Seqs is None:
+        if "Seqs" not in dir(self):
             self.get_seqs
         self.Revesre= Reverse(self.Seqs)
         return self.Revesre
     
     def get_Complement(self):
-        if self.Seqs is None:
+        if "Seqs" not in dir(self):
             self.get_seqs
         self.Complement= complement(self.Seqs)
         return self.Complement
+ 
+    def get_RNA(self):
+        if "Seqs" not in dir(self):
+            self.get_seqs
+        self.RNA= RNA(self.Seqs)
+        return self.RNA

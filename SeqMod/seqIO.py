@@ -43,22 +43,27 @@ def Read_Fasta(fastaFile):
     return Seqs
 
 # calculate sequence length
-def get_sequence_lenght(Seqs):
+def sequence_lenght(Seqs):
     Seq_len={}
     for header, seq in Seqs.items():
         #items() --> outputs a list of tuples
         Seq_len[header]=len(seq)
     return Seq_len
+def RNA(Seqs):
+    rnaDict={}
+    for header, seq in Seqs.items():
+        rnaDict[header]= seq.replace("T","U")
+        return rnaDict
 
 
-def get_GC_content(Seqs):
+def GC_content(Seqs):
     gc_content={}
     for header, seq in Seqs.items():
         gc_content[header]= round((seq.count("G"))+(seq.count("C"))/len(seq),2)
     return gc_content
 
 
-def get_at_content(Seqs):
+def AT_content(Seqs):
     at_content={}
     for header, seq in Seqs.items():
         at_content[header]=round((seq.count("A"))+(seq.count("T"))/len(seq),2)
