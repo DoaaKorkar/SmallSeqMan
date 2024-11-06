@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-import os
-import sys
+import os   # module provides a way to interact with the operating system
+import sys  # It gives you control over things like input and output like exit() and path()
+import re   # module provides support for working with regular expressions
+            # This is useful for searching, replacing, and manipulating strings based on specific patterns.
 
-
+############# OLD #################
 # SeqFileObject= open(FastaFile, "r")
 # print("first print")
 # print(SeqFileObject.read())
@@ -71,10 +73,14 @@ def Check_nonDNA(Seqs):
                 return True
     return False
 
-def Reverse(Seqs):
+def Reverse(seqs):
+    """
+    this function takes Dictionary.
+    """
     SeqDict={}
-    for header, seq in Seqs.items():
+    for header, seq in seqs.items():
         SeqDict[header]=seq[::-1]
+        
     return SeqDict
 
 def complement(Seqs):

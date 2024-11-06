@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-# from SeqMod.seqIO import Read_Fasta, get_sequence_lenght
+from SeqMod.seqIO import *
 from SeqClass.sequences import Sequence
 from SeqClass.DNA import DNA
 FastaFile= "exampledata/seqmultiline.fasta"
 
 
 
-mySeqs=Sequence(FastaFile)
+# mySeqs=Sequence(FastaFile)
 
 # print(mySeqs.get_seqs())
 # print(mySeqs.get_seqs_length())
@@ -14,7 +14,10 @@ mySeqs=Sequence(FastaFile)
 # print(mySeqs.get_AT_content())
 # print(mySeqs.get_Reverse())
 # print(mySeqs.get_Complement())
-print(DNA.get_reverse_complement(mySeqs))
+
+mine=Read_Fasta(FastaFile)
+print(Reverse_Complement(mine))
+
 ###print(mySeqs.get_seq_info())
 # print(mySeqs)
 # print(type(mySeqs))
