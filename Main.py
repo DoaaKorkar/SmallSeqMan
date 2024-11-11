@@ -9,7 +9,7 @@ FastaFile= "exampledata/seqmultiline.fasta"
 
 # mine=Read_Fasta(FastaFile)
 myDNA= DNA(FastaFile)
-# mySeqs=Sequence(FastaFile)
+mySeqs=Sequence(FastaFile)
 
 # print(mySeqs.get_seqs())
 # print(mySeqs.get_seqs_length())
