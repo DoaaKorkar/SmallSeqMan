@@ -30,3 +30,4 @@ class DNA(Sequence):
             for header, seq in self.Seqs.items():
                 self.aa_seq[header] = DNA.dna_translate(seq)
         return self.aa_seq
+

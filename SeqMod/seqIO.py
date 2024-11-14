@@ -99,3 +99,43 @@ def complement(Seqs):
 def Reverse_Complement(Seqs):
     #encapsulation
     return complement(Reverse(Seqs))
+
+
+def Find_ORFs(Seq):
+    start_codon = "ATG"
+    stop_codons = {"TAA", "TAG", "TGA"}
+    orfs_List = []
+    sequence_length = len(Seq)
+        
+    for frame in range(3):
+        pos = frame
+        while pos + 2 < sequence_length:
+            codon = Seq[pos:pos + 3]
+            print(type(codon))
+            if codon == start_codon:
+                # Start new ORF
+                orf_start = pos
+                for i in range(pos, sequence_length, 3):
+                    stop_codon = Seq[i:i + 3]
+                    if stop_codon in stop_codons:
+                        # Stop the ORF
+                        orfs_List.append((orf_start, i + 3, Seq[orf_start:i + 3]))
+                        break
+            pos += 3
+    return orfs_List
+    
+def find_all_orfs(sequences_dict):
+    all_orfs = {}
+
+    for header, sequence in sequences_dict.items():
+        forward_orfs = Find_ORFs(sequence)
+        reverse_sequence = Reverse_Complement(sequence)
+        reverse_orfs = Find_ORFs(reverse_sequence)
+
+        # Store ORFs for this sequence under its header
+        all_orfs[header] = {
+            'forward_strand': forward_orfs,
+            'reverse_strand': reverse_orfs
+        }
+                    
+    return all_orfs

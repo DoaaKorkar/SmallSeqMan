@@ -7,9 +7,11 @@ from SeqClass.DNA import DNA
 
 FastaFile= "exampledata/seqmultiline.fasta"
 
-# mine=Read_Fasta(FastaFile)
-myDNA= DNA(FastaFile)
-mySeqs=Sequence(FastaFile)
+mine=Read_Fasta(FastaFile)
+print(Find_ORFs(mine))
+print(find_all_orfs(mine))
+# myDNA= DNA(FastaFile)
+# mySeqs=Sequence(FastaFile)
 
 # print(mySeqs.get_seqs())
 # print(mySeqs.get_seqs_length())
@@ -18,7 +20,7 @@ mySeqs=Sequence(FastaFile)
 # print(mySeqs.get_Reverse())
 # print(mySeqs.get_Complement())
 # print(mySeqs.get_RNA())
-print(myDNA.traslate())
+# print(myDNA.traslate())
 # print(Reverse_Complement(mine))
 
 ###print(mySeqs.get_seq_info())
