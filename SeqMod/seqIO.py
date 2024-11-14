@@ -111,7 +111,7 @@ def Find_ORFs(Seq):
         pos = frame
         while pos + 2 < sequence_length:
             codon = Seq[pos:pos + 3]
-            print(type(codon))
+            # print(type(codon))
             if codon == start_codon:
                 # Start new ORF
                 orf_start = pos
