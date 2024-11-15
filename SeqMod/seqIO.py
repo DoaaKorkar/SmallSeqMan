@@ -121,7 +121,7 @@ def Find_ORFs(Seq):
                         # i is the position where the stop codon is found.
                         orfs_List.append((orf_start, i + 3, Seq[orf_start:i + 3]))
                         break
-            pos += 3
+            frame += 3
     return orfs_List
     
 def find_all_orfs(sequences_dict):
