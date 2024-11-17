@@ -127,9 +127,9 @@ def Find_ORFs(Seq):
 def find_all_orfs(sequences_dict):
     all_orfs = {}
 
-    for header, sequence in sequences_dict.items():
-        forward_orfs = Find_ORFs(sequence)
-        reverse_sequence = Reverse_Complement(sequence)
+    for header, seq in sequences_dict.items():
+        forward_orfs = Find_ORFs(seq)
+        reverse_sequence = Reverse_Complement(seq)
         reverse_orfs = Find_ORFs(reverse_sequence)
 
         # Store ORFs for this sequence under its header
