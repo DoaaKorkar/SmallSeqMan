@@ -121,6 +121,9 @@ def Find_ORFs(Seq):
                         # i is the position where the stop codon is found.
                         orfs_List.append((orf_start, i + 3, Seq[orf_start:i + 3]))
                         break
+                        # (5, 23, "ATTGTAATGGGCCGCTGAA")  # Tuple containing:
+                        # - Start index: 5
+                        # - End index: 23 (i.e., i + 3)
             frame += 3
     return orfs_List
     
