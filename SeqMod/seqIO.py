@@ -104,28 +104,30 @@ def Reverse_Complement(Seqs):
 def Find_ORFs(Seq):
     start_codon = "ATG"
     stop_codons = {"TAA", "TAG", "TGA"}
-    orfs_List = []
-    sequence_length = len(Seq)
-        
-    for frame in range(3):
-        while frame + 2 < sequence_length:
-            codon = Seq[frame:frame + 3]
-            # print(type(codon))
+    ORFs_list = []
+    sequenceLength = len(Seq)
+
+    for frame in range(3):  
+        while frame + 2 < sequenceLength:  
+            codon = Seq[frame:frame+3]
             if codon == start_codon:
-                # Start new ORF
-                orf_start = frame
-                for i in range(frame, sequence_length, 3):
-                    stop_codon = Seq[i:i + 3]
-                    if stop_codon in stop_codons:
-                        # Stop the ORF
-                        # i is the position where the stop codon is found.
-                        orfs_List.append((orf_start, i + 3, Seq[orf_start:i + 3]))
+                ORFs_start = frame
+                for i in range(ORFs_start, sequenceLength, 3):  # Look for stop codons
+                    ORF_stop = Seq[i:i+3]
+                    if ORF_stop in stop_codons:
+
+                        ORFs_list.append((ORFs_start, i+3, Seq[ORFs_start:i+3]))
                         break
-                        # (5, 23, "ATTGTAATGGGCCGCTGAA")  # Tuple containing:
-                        # - Start index: 5
-                        # - End index: 23 (i.e., i + 3)
-            frame += 3
-    return orfs_List
+                frame += 3  # Skip ahead to the next codon
+            else:
+                frame += 3
+
+    # Format the output as a string for direct printing
+    formatted_output = ""
+    for start, stop, orf in ORFs_list:
+        formatted_output += f"Start: {start}, Stop: {stop}, ORF: {orf}\n"
+    return formatted_output.strip() 
+
     
 def find_all_orfs(sequences_dict):
     all_orfs = {}
